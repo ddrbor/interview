@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -29,6 +30,20 @@ public:
         temp.y = this->y+other.y;
         return temp;
     }
+    Point & operator++()
+    {
+        this->x++;
+        this->y+=1;
+        return *this;
+    }
+
+    Point & operator++(int value)
+    {
+        Point temp(*this);
+        this->x++;
+        this->y++;
+        return temp;
+    }
 //    void SetY(intY);
 //    void GetY(intY);
 //    void SetX(intX);
@@ -45,6 +60,7 @@ int main()
     Point b(77,12);
     Point c;
     c=a+b;
-
+    ++a;
+    a++;
     return 0;
 }
