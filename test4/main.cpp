@@ -50,17 +50,27 @@ public:
 //    void GetX(intX);
 };
 
-
+class TestClass
+{
+public:
+    int & operator[](int index){
+        return arr[index];
+    }
+private:
+    int arr[5]{5, 44, 4, 987, 69};
+};
 
 
 
 int main()
 {
-    Point a(5,1);
+   /* Point a(5,1);
     Point b(77,12);
     Point c;
     c=a+b;
     ++a;
-    a++;
+    a++; */
+    TestClass a;
+    cout<<a[3]<<endl;
     return 0;
 }
