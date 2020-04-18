@@ -44,12 +44,27 @@ public:
         this->y++;
         return temp;
     }
-//    void SetY(intY);
-//    void GetY(intY);
-//    void SetX(intX);
-//    void GetX(intX);
+    void SetY(int y){
+        this->y=y;
+    }
+    int GetY(){
+        return y;
+    }
+    void SetX(int x){
+        this->x = x;
+    }
+    int GetX(){
+        return x;
+    }
+    void Print(){
+        cout<< "x = " << x << "\t y =" << y << endl;
+    }
+    friend void ChangeX(Point &value);
 };
 
+void ChangeX(Point &value){
+    value.x = -1;
+}
 class TestClass
 {
 public:
@@ -64,13 +79,16 @@ private:
 
 int main()
 {
-   /* Point a(5,1);
-    Point b(77,12);
+    Point a(5,1);
+    a.Print();
+    ChangeX(a);
+    a.Print();
+    /* Point b(77,12);
     Point c;
     c=a+b;
     ++a;
     a++; */
-    TestClass a;
-    cout<<a[3]<<endl;
+    TestClass d;
+    cout<<d[3]<<endl;
     return 0;
 }
